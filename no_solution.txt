@@ -1,0 +1,3 @@
+# Instanta FARA SOLUTIE - 3 discuri cu limita de noduri prea mica (solutia necesita 7 mutari, dar limitam la 2 noduri explorate)
+3 2 1
+max_nodes=2

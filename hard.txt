@@ -1,0 +1,2 @@
+# Instanta DIFICILA - 5 discuri, solutia se gaseste la adancimea 31 (2^5 - 1)
+5 4 3 2 1

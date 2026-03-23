@@ -16,18 +16,8 @@
     --accent3: #3cffdc;
     --text: #f0f0f8;
     --muted: #666680;
-    --disc1: #ff6b35;
-    --disc2: #ff9f1c;
-    --disc3: #e8ff3c;
-    --disc4: #3cffdc;
-    --disc5: #5b8af5;
-    --disc6: #c77dff;
-    --disc7: #ff4d6d;
-    --disc8: #ff6b35;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -35,289 +25,132 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
   body::before {
     content: '';
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    position: fixed; top: -50%; left: -50%;
+    width: 200%; height: 200%;
     background: radial-gradient(ellipse at 30% 20%, rgba(232,255,60,0.04) 0%, transparent 50%),
                 radial-gradient(ellipse at 70% 80%, rgba(60,255,220,0.03) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
   header {
-    display: flex;
-    align-items: baseline;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    padding-bottom: 1.5rem;
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 3rem; padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
   }
-
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--accent);
-  }
-
-  .subtitle {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .main-grid {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-  }
-
-  .panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
-
-  .panel-title {
-    font-size: 0.7rem;
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1.2rem;
-  }
-
-  /* Input section */
+  h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); }
+  .subtitle { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .main-grid { display: grid; grid-template-columns: 320px 1fr; gap: 1.5rem; align-items: start; }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .panel-title { font-size: 0.7rem; font-family: 'Space Mono', monospace; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; }
   .input-section { display: flex; flex-direction: column; gap: 1rem; }
-
-  label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  .disc-count-row {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  input[type="range"] {
-    flex: 1;
-    -webkit-appearance: none;
-    height: 3px;
-    background: var(--border);
-    border-radius: 2px;
-    outline: none;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-  }
-
-  .disc-count-val {
-    font-family: 'Space Mono', monospace;
-    font-size: 1.1rem;
-    color: var(--accent);
-    min-width: 24px;
-    text-align: center;
-  }
-
-  .algo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .algo-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 0.6rem 0.5rem;
-    border-radius: 8px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-    letter-spacing: 0.05em;
-  }
-
+  label { font-size: 0.8rem; color: var(--muted); font-family: 'Space Mono', monospace; letter-spacing: 0.05em; display: block; margin-bottom: 0.4rem; }
+  .disc-count-row { display: flex; align-items: center; gap: 0.8rem; }
+  input[type="range"] { flex: 1; -webkit-appearance: none; height: 3px; background: var(--border); border-radius: 2px; outline: none; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); cursor: pointer; }
+  .disc-count-val { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--accent); min-width: 24px; text-align: center; }
+  .algo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .algo-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 0.6rem 0.5rem; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.72rem; cursor: pointer; transition: all 0.2s; text-align: center; letter-spacing: 0.05em; }
   .algo-btn:hover { border-color: var(--accent); color: var(--text); }
-  .algo-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg);
-    font-weight: 700;
-  }
-
+  .algo-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
   .btn-row { display: flex; gap: 0.6rem; }
-
-  .btn {
-    flex: 1;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.03em;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-  }
+  .btn { flex: 1; padding: 0.75rem; border: none; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; letter-spacing: 0.03em; }
+  .btn-primary { background: var(--accent); color: var(--bg); }
   .btn-primary:hover { background: #d4eb2a; transform: translateY(-1px); }
   .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
-
-  .btn-secondary {
-    background: var(--surface2);
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
   .btn-secondary:hover { border-color: var(--accent3); color: var(--accent3); }
-
-  .file-upload-area {
-    border: 1px dashed var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    position: relative;
-  }
+  .file-upload-area { border: 1px dashed var(--border); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; }
   .file-upload-area:hover { border-color: var(--accent3); }
   .file-upload-area input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-  .file-upload-area span {
-    font-size: 0.75rem;
-    color: var(--muted);
-    font-family: 'Space Mono', monospace;
-  }
-
-  .disc-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    min-height: 32px;
-    align-items: center;
-  }
-
-  .disc-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-weight: 700;
-  }
+  .file-upload-area span { font-size: 0.75rem; color: var(--muted); font-family: 'Space Mono', monospace; }
+  .disc-preview { display: flex; flex-wrap: wrap; gap: 0.4rem; min-height: 32px; align-items: center; }
+  .disc-tag { font-family: 'Space Mono', monospace; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 700; }
+  .limits-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .limit-input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; width: 100%; }
+  .limit-input:focus { outline: none; border-color: var(--accent3); }
 
   /* Visualization */
   .viz-panel { display: flex; flex-direction: column; gap: 1rem; }
 
+  /* ── HANOI STAGE ── */
   .hanoi-stage {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1.5rem;
-    min-height: 280px;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    height: 300px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: flex-end;
   }
-
   .pegs-container {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     width: 100%;
     gap: 1rem;
+    height: 100%;
   }
-
   .peg-wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    height: 100%;
   }
-
   .peg-label {
     font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
     color: var(--muted);
     letter-spacing: 0.1em;
+    padding: 0.4rem 0;
+    flex-shrink: 0;
   }
 
+  /* The peg area: pole + discs stacked from bottom */
   .peg-area {
     position: relative;
     width: 100%;
-    min-height: 200px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end; /* discs sit at the bottom */
   }
-
   .peg-pole {
     position: absolute;
-    bottom: 0;
+    bottom: 4px; /* sits on top of the base */
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 190px;
+    height: calc(100% - 4px);
     background: var(--border);
-    border-radius: 2px;
+    border-radius: 2px 2px 0 0;
+    z-index: 1;
   }
-
   .peg-base {
     width: 100%;
     height: 4px;
     background: var(--border);
     border-radius: 2px;
-    position: relative;
+    flex-shrink: 0;
     z-index: 2;
   }
-
+  /* Disc stack — column direction means first child = bottom disc */
   .discs-stack {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column; /* normal column: first = top visually */
     align-items: center;
     width: 100%;
     position: relative;
     z-index: 2;
-    min-height: 185px;
-    justify-content: flex-end;
     gap: 2px;
+    /* We reverse via flex-direction: column-reverse so the array order
+       (bottom disc first) maps correctly to visual bottom-first */
+    flex-direction: column-reverse;
+    justify-content: flex-start; /* stack from the bottom upward */
   }
-
   .disc {
     height: 22px;
     border-radius: 4px;
@@ -327,181 +160,42 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.65rem;
     font-weight: 700;
-    color: var(--bg);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
+    color: #0a0a0f;
+    transition: all 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+    flex-shrink: 0;
   }
 
   /* Controls */
-  .controls-bar {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-  }
-
-  .ctrl-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .controls-bar { display: flex; align-items: center; gap: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; }
+  .ctrl-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--text); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
   .ctrl-btn:hover { border-color: var(--accent); color: var(--accent); }
   .ctrl-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-
-  .step-info {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    flex: 1;
-    text-align: center;
-  }
-
+  .step-info { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); flex: 1; text-align: center; }
   .step-info span { color: var(--accent); }
-
-  .speed-control {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-  }
-
+  .speed-control { display: flex; align-items: center; gap: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); }
   .speed-control input[type="range"] { width: 80px; }
 
   /* Stats */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.8rem;
-  }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .stat-value {
-    font-family: 'Space Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 0.3rem;
-    font-family: 'Space Mono', monospace;
-  }
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem; text-align: center; }
+  .stat-value { font-family: 'Space Mono', monospace; font-size: 1.2rem; font-weight: 700; color: var(--accent); display: block; }
+  .stat-label { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.25rem; font-family: 'Space Mono', monospace; }
 
   /* Move log */
-  .move-log {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    max-height: 140px;
-    overflow-y: auto;
-  }
-
+  .move-log { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; max-height: 140px; overflow-y: auto; }
   .move-log::-webkit-scrollbar { width: 4px; }
-  .move-log::-webkit-scrollbar-track { background: transparent; }
   .move-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-  .move-entry {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    padding: 0.25rem 0;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: var(--muted);
-  }
-
-  .move-entry.current {
-    color: var(--accent);
-    border-bottom-color: rgba(232,255,60,0.2);
-  }
-
-  .move-entry .move-num {
-    color: var(--border);
-    min-width: 30px;
-  }
-
+  .move-entry { font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 0.25rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.8rem; color: var(--muted); }
+  .move-entry.current { color: var(--accent); border-bottom-color: rgba(232,255,60,0.2); }
+  .move-entry .move-num { color: var(--border); min-width: 30px; }
   .move-entry.current .move-num { color: var(--accent2); }
-
-  .error-msg {
-    background: rgba(255, 77, 109, 0.1);
-    border: 1px solid rgba(255, 77, 109, 0.3);
-    color: #ff4d6d;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    display: none;
-  }
-
-  .loading {
-    display: none;
-    align-items: center;
-    gap: 0.8rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    padding: 0.5rem 0;
-  }
-
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
+  .error-msg { background: rgba(255,77,109,0.1); border: 1px solid rgba(255,77,109,0.3); color: #ff4d6d; padding: 0.6rem 1rem; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.75rem; display: none; }
+  .loading { display: none; align-items: center; gap: 0.8rem; font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); padding: 0.5rem 0; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  .progress-bar {
-    height: 2px;
-    background: var(--border);
-    border-radius: 1px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 1px;
-    transition: width 0.3s;
-    width: 0%;
-  }
-
-  @media (max-width: 900px) {
-    .main-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  }
+  .progress-bar { height: 2px; background: var(--border); border-radius: 1px; overflow: hidden; margin-top: 0.3rem; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 1px; transition: width 0.3s; width: 0%; }
+  @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: repeat(3, 1fr); } }
 </style>
 </head>
 <body>
@@ -512,12 +206,11 @@
   </header>
 
   <div class="main-grid">
-    <!-- Left Panel: Controls -->
+    <!-- Left Panel -->
     <div>
       <div class="panel input-section">
         <div class="panel-title">Configurare</div>
 
-        <!-- Disc count -->
         <div>
           <label>Număr discuri</label>
           <div class="disc-count-row">
@@ -526,13 +219,11 @@
           </div>
         </div>
 
-        <!-- Disc preview -->
         <div>
-          <label>Discuri</label>
+          <label>Discuri (stare initiala)</label>
           <div class="disc-preview" id="discPreview"></div>
         </div>
 
-        <!-- Algorithm -->
         <div>
           <label>Algoritm</label>
           <div class="algo-grid">
@@ -543,12 +234,25 @@
           </div>
         </div>
 
-        <!-- File upload -->
         <div>
-          <label>Sau încarcă din fișier</label>
+          <label>Limite de terminare</label>
+          <div class="limits-row">
+            <div>
+              <label style="margin-bottom:0.2rem;">Max noduri</label>
+              <input class="limit-input" type="number" id="maxNodes" value="100000" min="1">
+            </div>
+            <div>
+              <label style="margin-bottom:0.2rem;">Max timp (s)</label>
+              <input class="limit-input" type="number" id="maxTime" value="30" min="1">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label>Încarcă din fișier</label>
           <div class="file-upload-area">
             <input type="file" id="fileInput" accept=".txt">
-            <span id="fileLabel">📄 alege fișier .txt (ex: 3 2 1)</span>
+            <span id="fileLabel">📄 alege fișier .txt</span>
           </div>
         </div>
 
@@ -572,8 +276,16 @@
             <div class="stat-label">Mutări</div>
           </div>
           <div class="stat-card">
+            <span class="stat-value" id="statDepth">—</span>
+            <div class="stat-label">Adâncime</div>
+          </div>
+          <div class="stat-card">
             <span class="stat-value" id="statStates">—</span>
             <div class="stat-label">Stări</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="statCost">—</span>
+            <div class="stat-label">Cost</div>
           </div>
           <div class="stat-card">
             <span class="stat-value" id="statTime">—</span>
@@ -585,7 +297,6 @@
 
     <!-- Right Panel: Visualization -->
     <div class="viz-panel">
-      <!-- Hanoi Stage -->
       <div class="hanoi-stage">
         <div class="pegs-container">
           <div class="peg-wrapper">
@@ -615,13 +326,12 @@
         </div>
       </div>
 
-      <!-- Playback controls -->
       <div class="controls-bar">
-        <button class="ctrl-btn" id="btnFirst" title="Primul">⏮</button>
-        <button class="ctrl-btn" id="btnPrev" title="Înapoi">◀</button>
-        <button class="ctrl-btn" id="btnPlay" title="Play/Pause">▶</button>
-        <button class="ctrl-btn" id="btnNext" title="Înainte">▶|</button>
-        <button class="ctrl-btn" id="btnLast" title="Ultimul">⏭</button>
+        <button class="ctrl-btn" id="btnFirst">⏮</button>
+        <button class="ctrl-btn" id="btnPrev">◀</button>
+        <button class="ctrl-btn" id="btnPlay">▶</button>
+        <button class="ctrl-btn" id="btnNext">▶|</button>
+        <button class="ctrl-btn" id="btnLast">⏭</button>
         <div class="step-info" id="stepInfo">— / —</div>
         <div class="speed-control">
           <span>viteză</span>
@@ -629,14 +339,10 @@
         </div>
       </div>
 
-      <!-- Progress -->
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-      <!-- Move log -->
       <div class="move-log" id="moveLog">
-        <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); text-align: center; padding: 1rem 0;">
+        <div style="font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--muted);text-align:center;padding:1rem 0;">
           Rulează un algoritm pentru a vedea mutările
         </div>
       </div>
@@ -645,20 +351,18 @@
 </div>
 
 <script>
-  const DISC_COLORS = ['#ff6b35','#ff9f1c','#e8ff3c','#3cffdc','#5b8af5','#c77dff','#ff4d6d','#ff6b35'];
+  const DISC_COLORS = ['#ff6b35','#ff9f1c','#e8ff3c','#3cffdc','#5b8af5','#c77dff','#ff4d6d','#ff9f1c'];
 
   let currentDiscs = [3, 2, 1];
-  let currentAlgo = 'bfs';
-  let solution = null;
-  let currentStep = -1;
+  let currentAlgo  = 'bfs';
+  let solution     = null;
+  let currentStep  = -1;
   let playInterval = null;
-  let isPlaying = false;
+  let isPlaying    = false;
 
-  // Init
   updateDiscPreview();
   renderPegs([currentDiscs, [], []]);
 
-  // Slider
   document.getElementById('discSlider').addEventListener('input', function() {
     const n = parseInt(this.value);
     document.getElementById('discCountVal').textContent = n;
@@ -668,7 +372,6 @@
     resetSolution();
   });
 
-  // Algo buttons
   document.querySelectorAll('.algo-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.algo-btn').forEach(b => b.classList.remove('active'));
@@ -677,11 +380,9 @@
     });
   });
 
-  // Random
   document.getElementById('randomBtn').addEventListener('click', () => {
     const n = parseInt(document.getElementById('discSlider').value);
     const arr = Array.from({length: n}, (_, i) => i + 1);
-    // shuffle
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -692,7 +393,6 @@
     resetSolution();
   });
 
-  // File upload
   document.getElementById('fileInput').addEventListener('change', function() {
     const file = this.files[0];
     if (!file) return;
@@ -707,33 +407,38 @@
         const n = currentDiscs.length;
         document.getElementById('discSlider').value = n;
         document.getElementById('discCountVal').textContent = n;
+        if (data.options && data.options.max_nodes)
+          document.getElementById('maxNodes').value = data.options.max_nodes;
         updateDiscPreview();
         renderPegs([currentDiscs, [], []]);
         resetSolution();
       });
   });
 
-  // Solve
   document.getElementById('solveBtn').addEventListener('click', async () => {
     showError('');
     showLoading(true);
     document.getElementById('solveBtn').disabled = true;
     resetSolution();
-
     try {
       const res = await fetch('/solve', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ discs: currentDiscs, algorithm: currentAlgo })
+        body: JSON.stringify({
+          discs: currentDiscs,
+          algorithm: currentAlgo,
+          max_nodes: parseInt(document.getElementById('maxNodes').value),
+          max_time:  parseInt(document.getElementById('maxTime').value)
+        })
       });
       const data = await res.json();
       if (data.error) { showError(data.error); return; }
-
       solution = data;
-      document.getElementById('statMoves').textContent = data.solution_length;
+      document.getElementById('statMoves').textContent  = data.solution_length;
+      document.getElementById('statDepth').textContent  = data.depth;
       document.getElementById('statStates').textContent = data.states_explored;
-      document.getElementById('statTime').textContent = data.time;
-
+      document.getElementById('statCost').textContent   = data.total_cost;
+      document.getElementById('statTime').textContent   = data.time;
       buildMoveLog(data.moves);
       currentStep = -1;
       renderPegs([currentDiscs, [], []]);
@@ -746,12 +451,11 @@
     }
   });
 
-  // Playback
   document.getElementById('btnFirst').addEventListener('click', () => goToStep(-1));
-  document.getElementById('btnPrev').addEventListener('click', () => goToStep(currentStep - 1));
-  document.getElementById('btnNext').addEventListener('click', () => goToStep(currentStep + 1));
-  document.getElementById('btnLast').addEventListener('click', () => goToStep(solution.moves.length - 1));
-  document.getElementById('btnPlay').addEventListener('click', togglePlay);
+  document.getElementById('btnPrev').addEventListener('click',  () => goToStep(currentStep - 1));
+  document.getElementById('btnNext').addEventListener('click',  () => goToStep(currentStep + 1));
+  document.getElementById('btnLast').addEventListener('click',  () => goToStep(solution.moves.length - 1));
+  document.getElementById('btnPlay').addEventListener('click',  togglePlay);
 
   function togglePlay() {
     if (!solution) return;
@@ -768,7 +472,6 @@
   function scheduleNext() {
     if (!isPlaying) return;
     const speed = parseInt(document.getElementById('speedSlider').value);
-    const delay = Math.round(1200 / speed);
     playInterval = setTimeout(() => {
       if (currentStep < solution.moves.length - 1) {
         goToStep(currentStep + 1);
@@ -777,19 +480,17 @@
         isPlaying = false;
         document.getElementById('btnPlay').textContent = '▶';
       }
-    }, delay);
+    }, Math.round(1200 / speed));
   }
 
   function goToStep(step) {
     if (!solution) return;
     step = Math.max(-1, Math.min(solution.moves.length - 1, step));
     currentStep = step;
-
     if (step === -1) {
       renderPegs([currentDiscs, [], []]);
     } else {
-      const state = solution.moves[step].state;
-      renderPegs(state);
+      renderPegs(solution.moves[step].state);
     }
     updateControls();
     updateMoveLogHighlight();
@@ -797,18 +498,18 @@
 
   function renderPegs(state) {
     const maxDiscs = currentDiscs.length;
-    ['A', 'B', 'C'].forEach((peg, i) => {
+    ['A','B','C'].forEach((peg, i) => {
       const container = document.getElementById('peg' + peg);
       container.innerHTML = '';
-      const pegDiscs = state[i];
-      pegDiscs.forEach(disc => {
+      // state[i] is ordered bottom→top; with flex-direction:column-reverse,
+      // the first element rendered ends up at the BOTTOM visually. ✓
+      state[i].forEach(disc => {
         const el = document.createElement('div');
         el.className = 'disc';
-        const maxW = 90;
-        const minW = 20;
+        const maxW = 92, minW = 18;
         const w = minW + ((disc - 1) / Math.max(maxDiscs - 1, 1)) * (maxW - minW);
-        el.style.width = w + '%';
-        el.style.background = DISC_COLORS[disc - 1];
+        el.style.width   = w + '%';
+        el.style.background = DISC_COLORS[disc - 1] || '#aaa';
         el.textContent = disc;
         container.appendChild(el);
       });
@@ -818,13 +519,14 @@
   function updateDiscPreview() {
     const preview = document.getElementById('discPreview');
     preview.innerHTML = '';
-    currentDiscs.forEach((d, i) => {
+    currentDiscs.forEach(d => {
       const tag = document.createElement('span');
       tag.className = 'disc-tag';
       tag.textContent = d;
-      tag.style.background = DISC_COLORS[d - 1] + '22';
-      tag.style.color = DISC_COLORS[d - 1];
-      tag.style.border = '1px solid ' + DISC_COLORS[d - 1] + '44';
+      const col = DISC_COLORS[d - 1] || '#aaa';
+      tag.style.background = col + '22';
+      tag.style.color  = col;
+      tag.style.border = '1px solid ' + col + '44';
       preview.appendChild(tag);
     });
   }
@@ -836,7 +538,7 @@
       const entry = document.createElement('div');
       entry.className = 'move-entry';
       entry.id = 'move-' + i;
-      entry.innerHTML = `<span class="move-num">#${i + 1}</span> Disc ${move.disc}: ${move.from} → ${move.to}`;
+      entry.innerHTML = `<span class="move-num">#${i+1}</span> Disc ${move.disc}: ${move.from} → ${move.to} &nbsp;<span style="color:var(--muted);font-size:0.65rem;">adanc=${move.depth} | cost=${move.cost} | h=${move.h} | f=${move.f}</span>`;
       log.appendChild(entry);
     });
   }
@@ -846,43 +548,34 @@
       el.classList.toggle('current', i === currentStep);
     });
     if (currentStep >= 0) {
-      const el = document.getElementById('move-' + currentStep);
-      if (el) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      document.getElementById('move-' + currentStep)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
-
     const total = solution ? solution.moves.length : 0;
-    const progress = total > 0 ? ((currentStep + 1) / total) * 100 : 0;
-    document.getElementById('progressFill').style.width = progress + '%';
+    document.getElementById('progressFill').style.width = total > 0 ? ((currentStep + 1) / total * 100) + '%' : '0%';
   }
 
   function updateControls() {
     if (!solution) {
       document.getElementById('stepInfo').textContent = '— / —';
-      ['btnFirst','btnPrev','btnPlay','btnNext','btnLast'].forEach(id => {
-        document.getElementById(id).disabled = true;
-      });
+      ['btnFirst','btnPrev','btnPlay','btnNext','btnLast'].forEach(id => document.getElementById(id).disabled = true);
       return;
     }
     const total = solution.moves.length;
     document.getElementById('stepInfo').innerHTML = `pas <span>${currentStep + 1}</span> / <span>${total}</span>`;
     document.getElementById('btnFirst').disabled = currentStep <= -1;
-    document.getElementById('btnPrev').disabled = currentStep <= -1;
-    document.getElementById('btnNext').disabled = currentStep >= total - 1;
-    document.getElementById('btnLast').disabled = currentStep >= total - 1;
-    document.getElementById('btnPlay').disabled = false;
+    document.getElementById('btnPrev').disabled  = currentStep <= -1;
+    document.getElementById('btnNext').disabled  = currentStep >= total - 1;
+    document.getElementById('btnLast').disabled  = currentStep >= total - 1;
+    document.getElementById('btnPlay').disabled  = false;
   }
 
   function resetSolution() {
-    solution = null;
-    currentStep = -1;
-    isPlaying = false;
+    solution = null; currentStep = -1; isPlaying = false;
     clearTimeout(playInterval);
     document.getElementById('btnPlay').textContent = '▶';
-    document.getElementById('statMoves').textContent = '—';
-    document.getElementById('statStates').textContent = '—';
-    document.getElementById('statTime').textContent = '—';
+    ['statMoves','statDepth','statStates','statCost','statTime'].forEach(id => document.getElementById(id).textContent = '—');
     document.getElementById('progressFill').style.width = '0%';
-    document.getElementById('moveLog').innerHTML = '<div style="font-family: \'Space Mono\', monospace; font-size: 0.72rem; color: var(--muted); text-align: center; padding: 1rem 0;">Rulează un algoritm pentru a vedea mutările</div>';
+    document.getElementById('moveLog').innerHTML = '<div style="font-family:\'Space Mono\',monospace;font-size:0.72rem;color:var(--muted);text-align:center;padding:1rem 0;">Rulează un algoritm pentru a vedea mutările</div>';
     updateControls();
   }
 
@@ -891,12 +584,10 @@
     el.textContent = msg;
     el.style.display = msg ? 'block' : 'none';
   }
-
   function showLoading(show) {
     document.getElementById('loadingMsg').style.display = show ? 'flex' : 'none';
   }
 
-  // Init controls
   updateControls();
 </script>
 </body>
